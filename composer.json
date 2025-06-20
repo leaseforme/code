@@ -31,7 +31,8 @@
         "log1x/laravel-webfonts": "^2.0.1",
         "lorisleiva/laravel-actions": "^2.8.6",
         "nubs/random-name-generator": "^2.2",
-        "phpseclib/phpseclib": "^3.0.43",
+        "phpseclib/phpseclib": "^
+                "docusign/esign-client": "^7.0"3.0.43",
         "pion/laravel-chunk-upload": "^1.5.4",
         "poliander/cron": "^3.2.1",
         "purplepixie/phpdns": "^2.2",
