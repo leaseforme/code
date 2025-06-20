@@ -52,5 +52,18 @@ return [
         'redirect' => env('GOOGLE_REDIRECT_URI'),
         'tenant' => env('GOOGLE_TENANT'),
     ],
+    'docusign' => [
+        'client_id'     => env('DOCUSIGN_CLIENT_ID'),
+        'client_secret' => env('DOCUSIGN_CLIENT_SECRET'),
+        'base_uri'      => env('DOCUSIGN_BASE_URI', 'https://demo.docusign.net/restapi'),
+        'redirect_uri'  => env('DOCUSIGN_REDIRECT_URI'),
+        'account_id'    => env('DOCUSIGN_ACCOUNT_ID'),
+    ],
 
+    'rentspree' => [
+        'partner_code'  => env('RENTSPREE_PARTNER_CODE'),
+        'redirect_uri'  => env('RENTSPREE_REDIRECT_URI'),
+    ],
+
+];
 ];
