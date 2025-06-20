@@ -354,5 +354,18 @@ Route::any('/{any}', function () {
         return redirect(RouteServiceProvider::HOME);
     }
 
-    return redirect()->route('login');
+  
+use App\Http\Controllers\DocuSignAuthController;
+use App\Http\Controllers\SignatureController;
+use App\Http\Controllers\Webhook\DocuSignWebhookController;
+
+Route::get('docusign/redirect', [DocuSignAuthController::class, 'redirect'])->name('docusign.redirect');
+Route::get('docusign/callback', [DocuSignAuthController::class, 'callback'])->name('docusign.callback');
+
+Route::post('webhooks/docusign', DocuSignWebhookController::class)->name('webhooks.docusign');
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('leases/{lease}/sign', [SignatureController::class, 'create'])->name('leases.sign');
+});
+  return redirect()->route('login');
 })->where('any', '.*');
