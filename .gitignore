@@ -1,0 +1,12 @@
+/.env
+/.env.*
+!/.env.example
+/node_modules
+/vendor
+/public/storage
+/storage/*.key
+/storage/app/public
+*.log
+.phpunit.result.cache
+.idea/
+.vscode/
