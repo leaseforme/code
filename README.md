@@ -4,7 +4,7 @@ A Laravel 12.x application that helps landlords and tenants manage leases online
 
 ## Requirements
 
-- PHP 8.4+
+- PHP 8.2+
 - Composer
 - MySQL 8+
 - Node 20+ & npm (Vite build)

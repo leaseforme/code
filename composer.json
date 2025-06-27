@@ -11,9 +11,10 @@
         "server"
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.2",
         "danharrin/livewire-rate-limiting": "2.1.0",
         "doctrine/dbal": "^4.2.2",
+        "docusign/esign-client": "^7",
         "guzzlehttp/guzzle": "^7.9.2",
         "laravel/fortify": "^1.25.4",
         "laravel/framework": "12.4.1",
@@ -31,8 +32,7 @@
         "log1x/laravel-webfonts": "^2.0.1",
         "lorisleiva/laravel-actions": "^2.8.6",
         "nubs/random-name-generator": "^2.2",
-        "phpseclib/phpseclib": "^
-                "docusign/esign-client": "^7.0"3.0.43",
+        "phpseclib/phpseclib": "^3.0.43",
         "pion/laravel-chunk-upload": "^1.5.4",
         "poliander/cron": "^3.2.1",
         "purplepixie/phpdns": "^2.2",
@@ -106,9 +106,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cp -r 'hooks/' '.git/hooks/'",
-            "php -r \"copy('hooks/pre-commit', '.git/hooks/pre-commit');\"",
-            "php -r \"chmod('.git/hooks/pre-commit', 0777);\""
+            "@php -r \"if (file_exists('hooks/pre-commit')) {copy('hooks/pre-commit', '.git/hooks/pre-commit'); chmod('.git/hooks/pre-commit', 0777);} \""
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
