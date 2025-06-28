@@ -4,7 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\OauthController;
 use App\Http\Controllers\UploadController;
 use App\Livewire\Admin\Index as AdminIndex;
-use App\Livewire\Boarding\Index as BoardingIndex;
+// use App\Livewire\Boarding\Index as BoardingIndex; // Removed because component no longer exists
 use App\Livewire\Dashboard;
 use App\Livewire\Destination\Index as DestinationIndex;
 use App\Livewire\Destination\Show as DestinationShow;
@@ -97,7 +97,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::get('/', Dashboard::class)->name('dashboard');
-    Route::get('/onboarding', BoardingIndex::class)->name('onboarding');
+    // Route removed due to missing App\Livewire\Boarding\Index component
+    // Route::get('/onboarding', BoardingIndex::class)->name('onboarding');
 
     Route::get('/subscription', SubscriptionShow::class)->name('subscription.show');
     Route::get('/subscription/new', SubscriptionIndex::class)->name('subscription.index');
