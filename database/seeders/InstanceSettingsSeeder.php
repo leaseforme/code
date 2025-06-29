@@ -13,15 +13,17 @@ class InstanceSettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        InstanceSettings::create([
-            'id' => 0,
-            'is_registration_enabled' => true,
-            'smtp_enabled' => true,
-            'smtp_host' => 'coolify-mail',
-            'smtp_port' => 1025,
-            'smtp_from_address' => 'hi@localhost.com',
-            'smtp_from_name' => 'Coolify',
-        ]);
+        InstanceSettings::updateOrCreate(
+            ['id' => 0],
+            [
+                'is_registration_enabled' => true,
+                'smtp_enabled' => true,
+                'smtp_host' => 'coolify-mail',
+                'smtp_port' => 1025,
+                'smtp_from_address' => 'hi@localhost.com',
+                'smtp_from_name' => 'Coolify',
+            ]
+        );
         try {
             $ipv4 = Process::run('curl -4s https://ifconfig.io')->output();
             $ipv4 = trim($ipv4);
